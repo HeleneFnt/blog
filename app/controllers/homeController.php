@@ -1,11 +1,12 @@
 <?php
-// Présentation home Controller
-echo 'Hello world';
-echo '<br>';
-// Utilisation de la BDD
-include ('../app/persistances/blogPostData.php');
 
+// Utilisation de la BDD
+require ('../app/persistances/blogPostData.php');
+global $pdo;
 //Appel de la fonction derniers articles
 $last10Posts = lastBlogPosts($pdo);
 
-var_dump ($last10Posts);
+require ('../ressources/views/home.tpl.php');
+
+
+
