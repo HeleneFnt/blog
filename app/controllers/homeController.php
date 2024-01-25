@@ -1,5 +1,11 @@
 <?php
+// Présentation home Controller
 echo 'Hello world';
-include ('../persistances/blogPostData.php');
-$last10Posts = lastBlogPosts($dbh);
+echo '<br>';
+// Utilisation de la BDD
+include ('../app/persistances/blogPostData.php');
+
+//Appel de la fonction derniers articles
+$last10Posts = lastBlogPosts($pdo);
+
 var_dump ($last10Posts);
