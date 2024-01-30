@@ -1,7 +1,7 @@
 <?php
 
 // Utilisation de la BDD
-require ('../app/persistances/blogPostData.php');
+require_once ('../app/persistances/blogPostData.php');
 global $pdo;
 //Appel de la fonction derniers articles
 $last10Posts = lastBlogPosts($pdo);

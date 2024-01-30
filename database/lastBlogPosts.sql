@@ -1,1 +1,1 @@
-SELECT title FROM Articles ORDER by startDate DESC LIMIT 10;
+SELECT * FROM Articles ORDER by startDate DESC LIMIT 10;

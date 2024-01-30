@@ -4,7 +4,9 @@
     <p> Aucun article trouvé.</p>
 <?php else : ?>
    <?php foreach ($last10Posts as $post) : ?>
-      <?= $post['title'] . '<br>' ?>
+      <?= $post['id'] . '<br>' ?>
+        <?= $post['title'] . '<br>';
+//        var_dump($post);?>
 
     <?php endforeach; ?>
 <?php endif; ?>
