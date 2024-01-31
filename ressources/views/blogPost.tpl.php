@@ -1,5 +1,7 @@
-<?php require('../ressources/views/layouts/header.tpl.php'); ?>
+<?php require_once('../ressources/views/layouts/header.tpl.php'); ?>
+<h1> test </h1>
 
+<?php var_dump($commentToShow) ?>
 <?php if (empty($commentToShow)) : ?>
     <p> Aucun commentaire trouvé.</p>
 <?php else : ?>
@@ -20,4 +22,5 @@
     <?php endforeach; ?>
 <?php endif; ?>
 
-<?php require('../ressources/views/layouts/footer.tpl.php'); ?>
+
+<?php require_once('../ressources/views/layouts/footer.tpl.php'); ?>

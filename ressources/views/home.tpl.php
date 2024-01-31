@@ -1,13 +1,16 @@
-<?php require('../ressources/views/layouts/header.tpl.php'); ?>
+<?php require('../ressources/views/layouts/header.tpl.php');
+
+?>
 
 <?php if (empty($last10Posts)) : ?>
-    <p> Aucun article trouvé.</p>
+    <p> Aucun post trouvé.</p>
 <?php else : ?>
    <?php foreach ($last10Posts as $post) : ?>
+    <a href="?action=blogPostController&id=<?= $post['id']?>">
       <?= $post['id'] . '<br>' ?>
-        <?= $post['title'] . '<br>';
-//        var_dump($post);?>
-
+        <?= $post['title'] . '<br>';?>
+        <?= $post['pseudo'] . '<br>';?>
+    </a>
     <?php endforeach; ?>
 <?php endif; ?>
 

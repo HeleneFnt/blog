@@ -1,16 +1,22 @@
 <?php
-require ('../config/database.php');
 
-$userAction = filter_input(INPUT_GET, 'action', FILTER_SANITIZE_URL);
-if (!isset($userAction)) {
-    $userAction='home';
-}
-if ($userAction == 'home') {
-    require ('../app/controllers/homeController.php');
-}
+$controllers = [
+    'blogPostController',
+    'blogPostCreateController',
+    'homeController'
+];
 
-$blogpostId = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+$action = filter_input( INPUT_GET, 'action', FILTER_SANITIZE_URL);
 
-if ($blogpostId) {
-    require ('../app/controllers/blogPostController.php');
+if (!isset($action))
+{
+    $action = 'homeController' ;
 }
+if(array_search($action, $controllers) !== false){
+    $i = array_search($action, $controllers);
+    require ("../app/controllers/" . $controllers[$i] . ".php");
+}else{
+    require ("../ressources/views/errors/" . "404.php");
+}
+echo $i;
+echo $action;
